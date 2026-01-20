@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: '个人随笔网站 - 记录生活点滴与内心感悟，分享思考与成长' }}">
+    <meta name="keywords" content="{{ page.keywords | default: '随笔, 博客, 个人网站, 生活, 思考, 阅读, 旅行' }}">
+    <meta name="author" content="NuHoay">
+
+    <!-- SEO优化 -->
+    <meta property="og:title" content="{{ page.title | default: '个人随笔 - 记录生活，分享思考' }}">
+    <meta property="og:description" content="{{ page.description | default: '记录生活点滴与内心感悟，分享思考与成长' }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nuhoay.github.io{{ page.url }}">
+    <meta property="og:image" content="{{ page.image | default: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=630&fit=crop' }}">
+
+    <title>{{ page.title | default: '个人随笔 - 记录生活，分享思考' }}</title>
+
+    <!-- 字体预加载 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    <!-- 网站图标 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+
+    {{ page.head | default: '' }}
+</head>
+<body>
+    {% include header.html %}
+
+    <main class="main-content">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <!-- JavaScript文件 -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+    {{ page.scripts | default: '' }}
+
+    <!-- 性能监控和分析（可选） -->
+    <script>
+        // 页面加载完成后的回调
+        window.addEventListener('load', function() {
+            // 移除加载动画（如果有的话）
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach(el => el.style.display = 'none');
+
+            console.log('网站加载完成！');
+        });
+
+        // 错误处理
+        window.addEventListener('error', function(e) {
+            console.error('页面错误:', e.error);
+        });
+
+        // 未捕获的Promise错误
+        window.addEventListener('unhandledrejection', function(e) {
+            console.error('未处理的Promise错误:', e.reason);
+        });
+    </script>
+</body>
+</html>

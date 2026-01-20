@@ -1,0 +1,46 @@
+# 网站基本配置
+title: "个人随笔"
+description: "记录生活点滴与内心感悟，分享思考与成长"
+url: "https://nuhoay.github.io"
+author: "NuHoay"
+
+# SEO配置
+keywords: "随笔, 博客, 个人网站, 生活, 思考, 阅读, 旅行"
+og_image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=630&fit=crop"
+
+# 导航配置
+navigation:
+  - title: "首页"
+    url: "/"
+  - title: "文章"
+    url: "/posts/"
+  - title: "关于"
+    url: "/pages/about.html"
+  - title: "联系"
+    url: "/pages/contact.html"
+
+# 社交媒体配置
+social:
+  wechat: "#"
+  weibo: "#"
+  github: "https://github.com/nuhoay"
+  email: "your-email@example.com"
+
+# 文章标签配置
+tags:
+  - "生活"
+  - "思考"
+  - "技术"
+  - "旅行"
+  - "读书"
+
+# 性能配置
+performance:
+  enable_lazy_loading: true
+  enable_service_worker: true
+  enable_core_web_vitals: true
+
+# 分析配置（可选）
+analytics:
+  enabled: false
+  provider: ""
